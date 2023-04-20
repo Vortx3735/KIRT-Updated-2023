@@ -16,16 +16,8 @@ public class IndexerCom extends CommandBase {
     addRequirements(indexer);
   }
 
-  public void start() {
-    indexer.move(-0.65);
-  }
-
-  public void stop() {
-    indexer.move(0);
-  }
-
-  public void rev() {
-    indexer.move(0.65);
+  public void toggleIndex() {
+    indexer.toggleIndexer();
   }
 
   // Called when the command is initially scheduled.
