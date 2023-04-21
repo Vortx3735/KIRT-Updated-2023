@@ -34,16 +34,16 @@ public class DriveSub extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     if(RobotContainer.con1.getLeftY() != 0){
-      backLeft.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getLeftY());
-      backRight.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getLeftY());
+      backLeft.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getLeftY());
+      backRight.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getLeftY());
     }else{
       backLeft.set(TalonSRXControlMode.PercentOutput, 0);
       backRight.set(TalonSRXControlMode.PercentOutput, 0);
     }
 
     if(RobotContainer.con1.getLeftX() != 0){
-      backLeft.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getLeftY());
-      backRight.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getLeftY());
+      backLeft.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getLeftY());
+      backRight.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getLeftY());
     }else{
       backLeft.set(TalonSRXControlMode.PercentOutput, 0);
       backRight.set(TalonSRXControlMode.PercentOutput, 0);
