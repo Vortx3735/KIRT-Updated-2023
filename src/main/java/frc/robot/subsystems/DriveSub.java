@@ -41,9 +41,9 @@ public class DriveSub extends SubsystemBase {
       backRight.set(TalonSRXControlMode.PercentOutput, 0);
     }
 
-    if(RobotContainer.con1.getLeftX() != 0){
-      backLeft.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getLeftX());
-      backRight.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getLeftX());
+    if(RobotContainer.con1.getRightX() != 0){
+      backLeft.set(TalonSRXControlMode.PercentOutput, RobotContainer.con1.getRightX());
+      backRight.set(TalonSRXControlMode.PercentOutput, -RobotContainer.con1.getRightX());
     }else{
       backLeft.set(TalonSRXControlMode.PercentOutput, 0);
       backRight.set(TalonSRXControlMode.PercentOutput, 0);
