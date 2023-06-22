@@ -5,31 +5,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.IntakeSub;
+import frc.robot.subsystems.DriveSub;
 
-public class IntakeCom extends CommandBase {
+public class DriveCom extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final IntakeSub intake;
+  private final DriveSub drive;
 
-  public IntakeCom(IntakeSub inputIntake) {
-    intake = inputIntake;
-    addRequirements(intake);
-  } 
-
-  //these tell the intake subsystem to move a certain speed
-  public void startIntake() {
-    intake.move(-0.8);
+  public DriveCom(DriveSub inputDrive) {
+    drive = inputDrive;
+    addRequirements(drive);
   }
 
-  public void stopIntake() {
-    intake.move(0);
+  //this is the command that controls the subsystem to change the drive mode
+  public void toggleDriveMode() {
+    drive.driveToggle();
   }
-
-  public void rev() {
-    intake.move(0.8);
-  }
-
-
 
   // Called when the command is initially scheduled.
   @Override

@@ -10,16 +10,19 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 public class IndexerSub extends SubsystemBase {
-  Solenoid OutSolenoid;
-  Solenoid InSolenoid;
+  Solenoid OutSolenoid,
+            InSolenoid;
   public IndexerSub(int outID, int inID) {
+    //this assigns each single solenoid to their respective IDs
     OutSolenoid = new Solenoid(outID, PneumaticsModuleType.CTREPCM, 0);
     InSolenoid = new Solenoid(inID, PneumaticsModuleType.CTREPCM, 1);
 
+    //this sets the default positions for the solenoids
     OutSolenoid.set(false);
     InSolenoid.set(true);
   }
 
+  //this toggles each solenoid
   public void toggleIndexer() {
     OutSolenoid.toggle();
     InSolenoid.toggle();
