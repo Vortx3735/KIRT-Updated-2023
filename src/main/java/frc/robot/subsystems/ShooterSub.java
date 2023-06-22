@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterSub extends SubsystemBase {
   TalonFX shooter;
   public ShooterSub(int ID) {
+    //this assigns the shooter motor to it's ID
     shooter = new TalonFX(ID);
   }
 
+  //this tells the shooter motor to move at a certain speed due to a parameter
   public void move(double percentSpeed){
     shooter.set(TalonFXControlMode.PercentOutput, percentSpeed);
   }

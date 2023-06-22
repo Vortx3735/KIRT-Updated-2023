@@ -21,7 +21,9 @@ import frc.robot.subsystems.*;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
 
+  //This creates a controller object for each port
   public static VorTXController con1 = new VorTXController(0);
+  public static VorTXController con2 = new VorTXController(1);
 
   public static IntakeSub intakeSub = new IntakeSub(0);
   public static IntakeCom intake = new IntakeCom(intakeSub);
@@ -33,6 +35,7 @@ public class RobotContainer {
   public static ShooterCom shooter = new ShooterCom(shooterSub);
 
   public static DriveSub driveSub = new DriveSub(0, 0, 0, 0);
+  public static DriveCom drive = new DriveCom(driveSub);
 
   public static Compressor phCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
 
@@ -45,6 +48,7 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
 
+    //these set the default position for each motor based subsystem
     intakeSub.setDefaultCommand(
       new RunCommand(
         intake::stopIntake, 
@@ -70,35 +74,47 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    con1.cross.whileTrue(
+    //binds the intake to cross
+    con2.cross.whileTrue(
       new RunCommand(
         intake::startIntake,
         intakeSub
       )
     );
 
-    con1.square.whileTrue(
+    //binds the slow shooting speed command to square
+    con2.square.whileTrue(
       new RunCommand(
         shooter::shootSlow,
         shooterSub)
     );
 
-    con1.circle.whileTrue(
+    //binds the medium shooting speed command to circle
+    con2.circle.whileTrue(
       new RunCommand(
-        shooter::shootMid,
+        shooter::shootMed,
         shooterSub)
     );
 
-    con1.triangle.whileTrue(
+    //binds the maximum shooting speed command to triangle
+    con2.triangle.whileTrue(
       new RunCommand(
         shooter::shootMax,
         shooterSub)
     );
 
-    con1.r1.onTrue(
+    //binds the toggle for the indexer solenoid to r1
+    con2.r1.onTrue(
       new RunCommand(
         indexer::toggleIndex,
         indexerSub)
+    );
+
+    //binds the toggle for the driving mode to l1
+    con1.playstation.onTrue(
+      new RunCommand(
+        drive::toggleDriveMode,
+        driveSub)
     );
   }
 

@@ -10,13 +10,15 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSub extends SubsystemBase {
-  TalonSRX Intake;
+  TalonSRX intake;
   public IntakeSub(int ID) {
-    Intake = new TalonSRX(ID);
+    //this assigns the intake motor to it's ID
+    intake = new TalonSRX(ID);
   }
 
+  //this tells the intake motor to move at a certain speed from a parameter
   public void move(double percentSpeed){
-    Intake.set(TalonSRXControlMode.PercentOutput, percentSpeed);
+    intake.set(TalonSRXControlMode.PercentOutput, percentSpeed);
   }
 
 

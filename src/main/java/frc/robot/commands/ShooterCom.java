@@ -16,11 +16,13 @@ public class ShooterCom extends CommandBase {
     addRequirements(shooter);
   }
 
+
+  //these tell the shooter subsystem to move at a certain speed
   public void shootSlow() {
     shooter.move(.2);
   }
 
-  public void shootMid() {
+  public void shootMed() {
     shooter.move(.5);
   }
   

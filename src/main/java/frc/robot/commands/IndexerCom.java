@@ -16,6 +16,7 @@ public class IndexerCom extends CommandBase {
     addRequirements(indexer);
   }
 
+  //this controls the indexer subsystem to toggle the solenoid
   public void toggleIndex() {
     indexer.toggleIndexer();
   }
