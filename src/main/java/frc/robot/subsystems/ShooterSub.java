@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterSub extends SubsystemBase {
   TalonFX shooter;
   public ShooterSub(int ID) {
-    //this assigns the shooter motor to it's ID
+    //this assigns the shooter motor to its ID
     shooter = new TalonFX(ID);
   }
 

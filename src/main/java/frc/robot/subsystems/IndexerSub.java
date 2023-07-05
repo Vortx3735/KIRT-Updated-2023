@@ -10,6 +10,16 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 public class IndexerSub extends SubsystemBase {
+
+  // On this robot, the indexer is pneumatic, meaning it's controlled by air.
+  // For pneumatics, its really easy on programmers, because its literally on/off.
+  // There are two types of solenoids, single and double.
+  // Single solenoids are only able to turn on and off air flow. They have two states
+  // Double solenoids are able to turn on and off air flow through two channels, one on at a time.
+
+  // Usually we would use a DoubleSolenoid here, since we need to toggle air flow. But, you can use two singles and
+  // you will get the same result
+
   Solenoid OutSolenoid,
             InSolenoid;
   public IndexerSub(int outID, int inID) {

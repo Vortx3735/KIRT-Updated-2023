@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSub extends SubsystemBase {
   TalonSRX intake;
   public IntakeSub(int ID) {
-    //this assigns the intake motor to it's ID
+    //this assigns the intake motor to its ID
     intake = new TalonSRX(ID);
   }
 
