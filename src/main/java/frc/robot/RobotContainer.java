@@ -40,6 +40,8 @@ public class RobotContainer {
 
   public static Compressor phCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
 
+  public static LEDSub strip1 = new LEDSub(0, 60);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
 

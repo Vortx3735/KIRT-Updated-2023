@@ -17,6 +17,8 @@ public class IndexerSub extends SubsystemBase {
   // Single solenoids are only able to turn on and off air flow. They have two states
   // Double solenoids are able to turn on and off air flow through two channels, one on at a time.
 
+  // It's also important to note that we need to initiate the compressor, which we do in RobotContainer.java
+
   // Usually we would use a DoubleSolenoid here, since we need to toggle air flow. But, you can use two singles and
   // you will get the same result
 
